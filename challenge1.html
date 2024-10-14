@@ -1,0 +1,47 @@
+<script>
+
+    // ____________ 1- By Iterative Method _______________
+
+function reverseArray(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    
+    // Reverse the array in place
+    while (start < end) {
+        // Exchange elements
+        let temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        
+        start++;
+        end--;
+    }
+    return arr;
+}
+
+// Example 
+const arr = [10, 20, 30, 40, 50];
+console.log("Reversed Array:", reverseArray(arr));
+
+
+//  _______________ 2- By Recursive Method _________________
+
+function reverseArrayRecursive(arr, start, end) {
+    //  If start is greater than or equal to end,  recursion will stop
+    if (start >= end) return;
+
+    // Exchange elements
+    let temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+
+    // Recursive call 
+    reverseArrayRecursive(arr, start + 1, end - 1);
+}
+
+// Example 
+const arrRec = [11, 22, 33, 44, 55, 66, 77, 88, 99,];
+reverseArrayRecursive(arrRec, 0, arrRec.length - 1);
+console.log("Reversed Array (Recursive):", arrRec);
+
+</script>
