@@ -1,0 +1,35 @@
+<script>
+  function isPalindrome(str) {
+    // Remove non alphabet and numeric characters and convert to lowercase
+    let cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+    
+    // Initialize pointers
+    let left = 0;
+    let right = cleanedStr.length - 1;
+
+    // Compare characters from both ends moving towards the center
+    while (left < right) {
+        if (cleanedStr[left] !== cleanedStr[right]) {
+        return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+    }
+
+    // Take input from the user
+    let input = prompt("Enter a string to check if it's a palindrome:");
+
+    // Check if input is provided
+    if (input) {
+    if (isPalindrome(input)) {
+        alert("The string is a palindrome!");
+    } else {
+        alert("The string is not a palindrome.");
+    }
+    } else {
+    alert("No input provided!");
+ }
+
+</script>
